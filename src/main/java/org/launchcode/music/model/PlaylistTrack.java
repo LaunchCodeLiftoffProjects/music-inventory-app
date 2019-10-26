@@ -23,11 +23,27 @@ public class PlaylistTrack
 
     @Column(name = "Playlist ID")
 
-    private Integer id;
+    private Integer playlistid;
+
+    public Integer getPlaylistid() {
+        return playlistid;
+    }
+
+    public void setPlaylistid(Integer playlistid) {
+        this.playlistid = playlistid;
+    }
 
 
 
     @Column(name = "TrackID")
-    private Integer title;
+    private Integer trackid;
+
+    public Integer getTrackid() {
+        return trackid;
+    }
+
+    public void setTrackid(Integer trackid) {
+        this.trackid = trackid;
+    }
 
 }
