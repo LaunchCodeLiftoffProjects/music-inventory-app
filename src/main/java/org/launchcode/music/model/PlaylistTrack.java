@@ -9,7 +9,7 @@ import javax.persistence.*;
 
 @NoArgsConstructor
 
-@Table(name = "playlist track")
+@Table(name = "playlist_track")
 
 @Entity
 
@@ -18,32 +18,17 @@ public class PlaylistTrack
 {
 
     @Id
-
     @GeneratedValue
+    @Column(name = "Playlist_id")
+    private Long playlistid;
 
-    @Column(name = "Playlist ID")
 
-    private Integer playlistid;
-
-    public Integer getPlaylistid() {
-        return playlistid;
-    }
-
-    public void setPlaylistid(Integer playlistid) {
-        this.playlistid = playlistid;
-    }
 
 
 
     @Column(name = "TrackID")
-    private Integer trackid;
+    private Long trackid;
 
-    public Integer getTrackid() {
-        return trackid;
-    }
 
-    public void setTrackid(Integer trackid) {
-        this.trackid = trackid;
-    }
 
 }
