@@ -22,4 +22,12 @@ public class MusicTrackService {
     public MusicTrack addMusicTrack(MusicTrack musicTrack) {
         return musicTrackRepository.save(musicTrack);
     }
+
+    public void deleteMusicTrack(MusicTrack musicTrack) {
+        musicTrackRepository.delete(musicTrack);
+    }
+
+    public void updateMusicTrack(MusicTrack musicTrack) {
+        musicTrackRepository.save(musicTrack);
+    }
 }

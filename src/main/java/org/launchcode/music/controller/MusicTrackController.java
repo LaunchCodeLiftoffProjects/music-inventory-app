@@ -29,4 +29,16 @@ public class MusicTrackController {
         return musicTrackService.addMusicTrack(musicTrack);
     }
 
+    @PostMapping("/delete")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteTrack(@RequestBody MusicTrack musicTrack) {
+        musicTrackService.deleteMusicTrack(musicTrack);
+    }
+
+    @PostMapping("/update")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateMusicTrack(@RequestBody MusicTrack musicTrack) {
+        musicTrackService.updateMusicTrack(musicTrack);
+    }
+
 }

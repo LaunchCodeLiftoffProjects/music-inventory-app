@@ -1,7 +1,5 @@
 package org.launchcode.music.model;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -19,4 +17,8 @@ public class MusicTrack {
 
     @Column(name = "title")
     private String title;
+
+    public Integer getId() {
+        return id;
+    }
 }
