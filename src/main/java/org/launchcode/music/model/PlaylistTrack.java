@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Table(name = "playlist_track")
 
 @Entity
+@IdClass(Playlisttrackid.class)
 
 public class PlaylistTrack
 
@@ -24,7 +25,7 @@ public class PlaylistTrack
 
 
 
-
+    @Id
     @Column(name = "TrackID")
     private Long trackid;
 
