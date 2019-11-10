@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 
-public class Addplaylisttrack {
+public class playlisttrackservice {
     private PlaylistTrackrepository playlistTrackrepository;
-    public Addplaylisttrack(PlaylistTrackrepository playlistTrackrepository)
+    public playlisttrackservice(PlaylistTrackrepository playlistTrackrepository)
     {
 
         this.playlistTrackrepository = playlistTrackrepository;
@@ -22,11 +22,15 @@ public class Addplaylisttrack {
     }
     //public List<PlaylistTrack> getTracksforplaylist(Playlist p)
     {
-       // return playlistTrackrepository.findAllById(p.getId());//
+        // return playlistTrackrepository.findAllById(p.getId());//
     }//
-     public PlaylistTrack addPlaylisttrack(PlaylistTrack playlisttrack)
+    public PlaylistTrack addPlaylisttrack(PlaylistTrack playlisttrack)
     {
         return playlistTrackrepository.save(playlisttrack);
+    }
+    public void deletePlaylisttrack(PlaylistTrack playlisttrack)
+    {
+         playlistTrackrepository.delete(playlisttrack);
     }
 
 }
