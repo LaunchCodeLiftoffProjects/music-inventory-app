@@ -24,7 +24,7 @@ public class Addplaylisttrack {
     {
        // return playlistTrackrepository.findAllById(p.getId());//
     }//
-     public PlaylistTrack addPlaylist(PlaylistTrack playlisttrack)
+     public PlaylistTrack addPlaylisttrack(PlaylistTrack playlisttrack)
     {
         return playlistTrackrepository.save(playlisttrack);
     }

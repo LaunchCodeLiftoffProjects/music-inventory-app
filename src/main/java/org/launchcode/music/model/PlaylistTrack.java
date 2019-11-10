@@ -18,7 +18,6 @@ public class PlaylistTrack
 {
 
     @Id
-    @GeneratedValue
     @Column(name = "Playlist_id")
     private Long playlistid;
 
