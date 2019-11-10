@@ -33,20 +33,43 @@ public class Playlistcontroller
         return playlistservice.getAll();
 
     }
+    @GetMapping("/search")
+
+    @ResponseStatus(HttpStatus.OK)
+
+    public List<Playlist> search(@RequestParam(value="searchtext") String searchtext)
+
+    {
+
+        return playlistservice.searchPlaylist(searchtext);
+
+    }
 
 
 
     @PostMapping("/new")
 
+
+
     @ResponseStatus(HttpStatus.OK)
+
+
 
     public Playlist addNew(@RequestBody Playlist playlist)
 
+
+
     {
+
+
 
         return playlistservice.addPlaylist(playlist);
 
+
+
     }
+
+
 
     @PostMapping("/addTrack")
 

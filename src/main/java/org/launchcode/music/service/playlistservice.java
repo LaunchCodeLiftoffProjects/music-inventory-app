@@ -10,36 +10,35 @@ import java.util.List;
 
 public class playlistservice {
     private PlaylistRepository playlistRepository;
-    public playlistservice(PlaylistRepository playlistRepository)
-    {
+
+    public playlistservice(PlaylistRepository playlistRepository) {
 
         this.playlistRepository = playlistRepository;
     }
 
 
-
-    public List<Playlist> getAll()
-
-    {
+    public List<Playlist> getAll() {
 
         return playlistRepository.findAll();
 
     }
 
 
-
-    public Playlist addPlaylist(Playlist playlist)
-
-    {
+    public Playlist addPlaylist(Playlist playlist) {
 
         return playlistRepository.save(playlist);
 
     }
-    public void deletePlaylist(Playlist playlist)
 
-    {
+    public void deletePlaylist(Playlist playlist) {
 
-         playlistRepository.delete(playlist);
+        playlistRepository.delete(playlist);
+
+    }
+
+    public List<Playlist> searchPlaylist(String searchtext) {
+
+        return playlistRepository.findByTitleContaining(searchtext);
 
     }
 }
