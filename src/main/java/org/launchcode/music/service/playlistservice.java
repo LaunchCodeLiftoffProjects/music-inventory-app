@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 
-public class Addplaylist {
+public class playlistservice {
     private PlaylistRepository playlistRepository;
-    public Addplaylist(PlaylistRepository playlistRepository)
+    public playlistservice(PlaylistRepository playlistRepository)
     {
 
         this.playlistRepository = playlistRepository;
@@ -35,5 +35,11 @@ public class Addplaylist {
         return playlistRepository.save(playlist);
 
     }
+    public void deletePlaylist(Playlist playlist)
 
+    {
+
+         playlistRepository.delete(playlist);
+
+    }
 }

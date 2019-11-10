@@ -1,7 +1,7 @@
 package org.launchcode.music.controller;
 import org.launchcode.music.model.Playlist;
 import org.launchcode.music.model.PlaylistTrack;
-import org.launchcode.music.service.Addplaylist;
+import org.launchcode.music.service.playlistservice;
 import org.launchcode.music.service.playlisttrackservice;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +13,11 @@ import java.util.List;
 public class Playlistcontroller
 
 {
-    private Addplaylist addplaylist;
+    private playlistservice playlistservice;
     private playlisttrackservice playlisttrackservice;
-    public Playlistcontroller(Addplaylist addplaylist, playlisttrackservice playlisttrackservice)
+    public Playlistcontroller(playlistservice playlistservice, playlisttrackservice playlisttrackservice)
     {
-        this.addplaylist = addplaylist;
+        this.playlistservice = playlistservice;
         this.playlisttrackservice = playlisttrackservice;
     }
 
@@ -30,7 +30,7 @@ public class Playlistcontroller
 
     {
 
-        return addplaylist.getAll();
+        return playlistservice.getAll();
 
     }
 
@@ -44,7 +44,7 @@ public class Playlistcontroller
 
     {
 
-        return addplaylist.addPlaylist(playlist);
+        return playlistservice.addPlaylist(playlist);
 
     }
 
@@ -68,6 +68,17 @@ public class Playlistcontroller
     {
 
          playlisttrackservice.deletePlaylisttrack(playlistTrack);
+
+    }
+    @PostMapping("/deletePlaylist")
+
+    @ResponseStatus(HttpStatus.OK)
+
+    public void deletePlaylist(@RequestBody Playlist playlist)
+
+    {
+
+        playlistservice.deletePlaylist(playlist);
 
     }
 }
