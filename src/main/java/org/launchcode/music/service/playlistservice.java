@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 
 public class playlistservice {
@@ -39,6 +41,19 @@ public class playlistservice {
     public List<Playlist> searchPlaylist(String searchtext) {
 
         return playlistRepository.findByTitleContaining(searchtext);
+
+    }
+    public boolean updatePlaylist(Playlist playlist) {
+        Optional<Playlist> existingPlaylist= playlistRepository.findById(playlist.getId());
+        if(existingPlaylist.isPresent())
+        {
+            existingPlaylist.get().setTitle(playlist.getTitle());
+            playlistRepository.save(existingPlaylist.get());
+            return true;
+
+        }
+
+        return false;
 
     }
 }
