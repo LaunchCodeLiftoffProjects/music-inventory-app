@@ -25,4 +25,8 @@ public class ArtistService {
     {
         return artistRepository.save(artist);
     }
+
+    public void deleteArtist(Artist artist) {
+        artistRepository.delete(artist);
+    }
 }

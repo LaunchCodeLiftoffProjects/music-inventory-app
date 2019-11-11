@@ -30,4 +30,11 @@ public class ArtistController
     {
         return artistService.addArtist(artist);
     }
+
+    @PostMapping("/delete")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteArtist(@RequestBody Artist artist)
+    {
+        artistService.deleteArtist(artist);
+    }
 }
