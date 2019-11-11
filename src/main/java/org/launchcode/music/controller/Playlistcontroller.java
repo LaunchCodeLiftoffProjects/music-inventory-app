@@ -85,10 +85,17 @@ public class Playlistcontroller
 
     @ResponseStatus(HttpStatus.OK)
 
-    public void updatePlaylist(@RequestBody Playlist playlist)
+    public ResponseEntity<Playlist> updatePlaylist(@RequestBody Playlist playlist)
 
     {
-        playlistservice.updatePlaylist(playlist);
+        if(playlistservice.updatePlaylist(playlist))
+        {
+            return ResponseEntity.ok().build();
+        }
+        else
+        {
+           return ResponseEntity.notFound().build();
+        }
 
     }
 
