@@ -98,6 +98,17 @@ public class Playlistcontroller
         }
 
     }
+    @PostMapping("/deletePlaylist")
+
+    @ResponseStatus(HttpStatus.OK)
+    public void deletePlaylist(@RequestBody Playlist playlist)
+
+    {
+
+        playlistservice.deletePlaylist(playlist);
+
+    }
+
 
 
 
