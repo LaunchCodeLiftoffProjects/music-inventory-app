@@ -29,4 +29,8 @@ public class ArtistService {
     public void deleteArtist(Artist artist) {
         artistRepository.delete(artist);
     }
+
+    public boolean editArtist(Artist artist) {
+        Optional<Artist> existingArtist = artistRepository
+    }
 }

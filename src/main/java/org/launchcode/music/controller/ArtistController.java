@@ -2,6 +2,7 @@ package org.launchcode.music.controller;
 import org.launchcode.music.model.Artist;
 import org.launchcode.music.service.ArtistService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +31,21 @@ public class ArtistController
     {
         return artistService.addArtist(artist);
     }
+
+    @PostMapping("/edit")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Artist> editArtist(@RequestBody Artist artist)
+    {
+        if (ArtistService.updateArtist(artist))
+        {
+            return ResponseEntity.ok().build();
+        }
+            else
+        {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 
     @PostMapping("/delete")
     @ResponseStatus(HttpStatus.OK)
