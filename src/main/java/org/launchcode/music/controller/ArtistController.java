@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/artist")
@@ -32,25 +33,25 @@ public class ArtistController
         return artistService.addArtist(artist);
     }
 
-    @PostMapping("/edit")
+    @PostMapping("/update")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Artist> editArtist(@RequestBody Artist artist)
+    public ResponseEntity<Artist> updateArtist(@RequestBody Artist newArtist)
     {
-        if (ArtistService.updateArtist(artist))
-        {
-            return ResponseEntity.ok().build();
-        }
-            else
-        {
+        Optional<Artist> differentArtist = artistService.update(newArtist);
+        if (differentArtist.isPresent()) {
+            return ResponseEntity.ok().body(differentArtist.get());
+        } else {
             return ResponseEntity.notFound().build();
         }
     }
+    @PostMapping("/deleteartist")
 
-
-    @PostMapping("/delete")
     @ResponseStatus(HttpStatus.OK)
     public void deleteArtist(@RequestBody Artist artist)
+
     {
+
         artistService.deleteArtist(artist);
+
     }
 }
