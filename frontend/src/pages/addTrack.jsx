@@ -23,30 +23,16 @@ const useStyles = makeStyles(theme => ({
 
 export default function ContainedButtons() {
   const classes = useStyles();
-  const [age, setAge] = React.useState("");
-  const [open, setOpen] = React.useState(false);
-
-  const handleChange = event => {
-    setAge(event.target.value);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
   return (
     <div className={classes.container}>
       <h1>Add Track Information</h1>
       <font color="#888888" size="5">
+        Track Title:
         <TextField
           id="standard-full-width"
-          label="Track Title"
           style={{ margin: 8 }}
-          placeholder="Title of song"
+          placeholder="Type title of song here"
           helperText="Example: Jail House Rock"
           fullWidth
           margin="normal"
@@ -59,11 +45,11 @@ export default function ContainedButtons() {
         Check box if this song is a favorite.
         <br />
         <br />
+        Artist
         <TextField
           id="standard-full-width"
-          label="Artist"
           style={{ margin: 8 }}
-          placeholder="Artist"
+          placeholder="Type artist here"
           helperText="Example: Elvis"
           fullWidth
           margin="normal"
@@ -72,45 +58,26 @@ export default function ContainedButtons() {
           }}
         />
         <br />
-        <FormControl className={classes.formControl}>
-          <InputLabel id="demo-controlled-open-select-label">Genre</InputLabel>
-          <Select
-            labelId="demo-controlled-open-select-label"
-            id="demo-controlled-open-select"
-            value={age}
-          >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={10}>Rock</MenuItem>
-            <MenuItem value={20}>Country</MenuItem>
-            <MenuItem value={30}>Classical</MenuItem>
-            <MenuItem value={40}>Jazz</MenuItem>
-          </Select>
-        </FormControl>
         <br />
-        <FormControl className={classes.formControl}>
-          <InputLabel id="demo-controlled-open-select-label">
-            File Type
-          </InputLabel>
-          <Select
-            labelId="demo-controlled-open-select-label"
-            id="demo-controlled-open-select"
-            open={open}
-            onClose={handleClose}
-            onOpen={handleOpen}
-            value={age}
-            onChange={handleChange}
-          >
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            <MenuItem value={10}>CD</MenuItem>
-            <MenuItem value={20}>Cassette</MenuItem>
-            <MenuItem value={30}>Record</MenuItem>
-            <MenuItem value={40}>Digital</MenuItem>
-          </Select>
-        </FormControl>
+        Genre
+        <br />
+        <select name="Genre">
+          <option value="Rock">Rock</option>
+          <option value="Country">Country</option>
+          <option value="Classical">Classical</option>
+          <option value="Jazz">Jazz</option>
+        </select>
+        <br />
+        <br />
+        File Type
+        <br />
+        <select name="FileType">
+          <option value="Record">Record</option>
+          <option value="Cassette">Cassette</option>
+          <option value="CD">CD</option>
+          <option value="Digital">Digital</option>
+        </select>
+        <br />
         <br />
         <Button variant="outlined" color="primary" className={classes.button}>
           Submit
