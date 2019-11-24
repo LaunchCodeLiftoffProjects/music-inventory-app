@@ -1,8 +1,8 @@
 import React from "react";
 
-export default class PageThree extends React.Component {
+export default class Search extends React.Component {
   //Write HTML inside render function
   render() {
-    return <div>Page 3</div>;
+    return <div>Search</div>;
   }
 }
