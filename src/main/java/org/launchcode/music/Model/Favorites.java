@@ -1,56 +1,47 @@
 package org.launchcode.music.Model;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-public class Menu {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Table (name = "favorites")
+public class Favorites {
     @Id
     @GeneratedValue
-    private int id;
+    @Column(name = "id")
+    private Long id;
 
 
+    @Column(name = "favorites")
+    boolean Favorites;
 
-    @NotNull
-    @Size(min=3, max=15)
-    private String name;
-
-    @ManyToMany
-    private List<Song> songs;
-
-    public Menu(){}
-
-//    public Menu(String name) {
-//        this.name = name;
-//    }
-
-    public void addItem(Song item) { songs.add(item);}
-
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public boolean isFavorites() {
+        return Favorites;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-    public List<Song> getSong() {
-        return songs
-                ;
+    public void setFavorites(boolean favorites) {
+        Favorites = favorites;
     }
 
 }
+
+
 
 
 
