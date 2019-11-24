@@ -2,24 +2,28 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
 import { AppBar, Toolbar } from '@material-ui/core'
+import { mergeClasses } from '@material-ui/styles'
+import logo from './logo.jpg'
 
 export const NavBar = ({ color }) => (
+    
     <AppBar color={color}>
+    
         <Toolbar>
-            <Link to="/">
-                <Button>Page One</Button>
+        <img src={logo} alt="logo" width="42" height="42"></img>
+
+            <Link to="/page1">
+                <Button>Playlist</Button>
             </Link>
             <Link to="/page2">
-                <Button>Page Two</Button>
+                <Button>Track</Button>
             </Link>
             <Link to="/page3">
-                <Button>Page Three</Button>
-            </Link>
-            <Link to="/page4">
-                <Button>Page Four</Button>
-            </Link>
-            <Link to="/page5">
-                <Button>Page Five</Button>
+                <Button>Search</Button>
+            </Link>        
+            
+             <Link to="/page4">
+                <Button>Share</Button>
              </Link>
         </Toolbar>
     </AppBar>
