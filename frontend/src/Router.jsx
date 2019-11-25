@@ -6,6 +6,7 @@ import Playlist from "./pages/page1";
 import Track from "./pages/page2";
 import Search from "./pages/page3";
 import Share from "./pages/page4";
+import AddGenre from "./pages/addGenre";
 
 import Layout from "./Layout";
 
@@ -19,6 +20,7 @@ export const Routes = () => {
           <Route path="/addTrack" exact component={AddTrack} />
           <Route path="/page3" exact component={Search} />
           <Route path="/page4" exact component={Share} />
+          <Route path="/addGenre" exact component={AddGenre} />
         </div>
       </Layout>
     </Router>

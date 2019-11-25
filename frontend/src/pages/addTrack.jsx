@@ -68,6 +68,10 @@ export default function ContainedButtons() {
           <option value="Jazz">Jazz</option>
         </select>
         <br />
+        <a size="2" href="/addGenre">
+          Click here to add a Genre
+        </a>
+        <br />
         <br />
         File Type
         <br />

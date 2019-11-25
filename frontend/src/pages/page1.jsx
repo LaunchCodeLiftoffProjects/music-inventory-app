@@ -1,13 +1,8 @@
 import React from "react";
 
-export default class Playlist extends React.Component {
+export default class Track extends React.Component {
   //Write HTML inside render function
   render() {
-   return(
-     <div>
-       <div>Playlist</div>
-           </div>
-   );
-   
+    return <div>Track</div>;
   }
 }
