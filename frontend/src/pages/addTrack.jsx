@@ -8,6 +8,8 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import { lightGreen } from "@material-ui/core/colors";
 
+import GenreList from "../Components/GenreList";
+
 const useStyles = makeStyles(theme => ({
   button: {
     margin: theme.spacing(1)
@@ -21,72 +23,74 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function ContainedButtons() {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.container}>
-      <h1>Add Track Information</h1>
-      <font color="#888888" size="5">
-        Track Title:
-        <TextField
-          id="standard-full-width"
-          style={{ margin: 8 }}
-          placeholder="Type title of song here"
-          helperText="Example: Jail House Rock"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true
-          }}
-        />
-        <br />
-        <input type="checkbox" name="favorite" value="favoriteSong" />
-        Check box if this song is a favorite.
-        <br />
-        <br />
-        Artist
-        <TextField
-          id="standard-full-width"
-          style={{ margin: 8 }}
-          placeholder="Type artist here"
-          helperText="Example: Elvis"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true
-          }}
-        />
-        <br />
-        <br />
-        Genre
-        <br />
-        <select name="Genre">
-          <option value="Rock">Rock</option>
-          <option value="Country">Country</option>
-          <option value="Classical">Classical</option>
-          <option value="Jazz">Jazz</option>
-        </select>
-        <br />
-        <a size="2" href="/addGenre">
-          Click here to add a Genre
-        </a>
-        <br />
-        <br />
-        File Type
-        <br />
-        <select name="FileType">
-          <option value="Record">Record</option>
-          <option value="Cassette">Cassette</option>
-          <option value="CD">CD</option>
-          <option value="Digital">Digital</option>
-        </select>
-        <br />
-        <br />
-        <Button variant="outlined" color="primary" className={classes.button}>
-          Submit
-        </Button>
-      </font>
-    </div>
-  );
+export default class addTrack extends React.Component {
+  //Write HTML inside render function
+  render() {
+    return (
+      <div>
+        <h1>Add Track Information</h1>
+        <font color="#888888" size="5">
+          Track Title:
+          <TextField
+            id="standard-full-width"
+            style={{ margin: 8 }}
+            placeholder="Type title of song here"
+            helperText="Example: Jail House Rock"
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true
+            }}
+          />
+          <br />
+          <input type="checkbox" name="favorite" value="favoriteSong" />
+          Check box if this song is a favorite.
+          <br />
+          <br />
+          Artist
+          <TextField
+            id="standard-full-width"
+            style={{ margin: 8 }}
+            placeholder="Type artist here"
+            helperText="Example: Elvis"
+            fullWidth
+            margin="normal"
+            InputLabelProps={{
+              shrink: true
+            }}
+          />
+          <br />
+          <br />
+          Genre
+          <br />
+          <select name="Genre">
+            <option value="Rock">Rock</option>
+            <option value="Country">Country</option>
+            <option value="Classical">Classical</option>
+            <option value="Jazz">Jazz</option>
+          </select>
+          <GenreList />
+          <br />
+          <a size="2" href="/addGenre">
+            Click here to add a Genre
+          </a>
+          <br />
+          <br />
+          File Type
+          <br />
+          <select name="FileType">
+            <option value="Record">Record</option>
+            <option value="Cassette">Cassette</option>
+            <option value="CD">CD</option>
+            <option value="Digital">Digital</option>
+          </select>
+          <br />
+          <br />
+          <Button variant="outlined" color="primary">
+            Submit
+          </Button>
+        </font>
+      </div>
+    );
+  }
 }
