@@ -29,7 +29,7 @@ export default class addTrack extends React.Component {
     return (
       <div>
         <h1>Add Track Information</h1>
-        <font color="#888888" size="5">
+        <font color="black" size="5">
           Track Title:
           <TextField
             id="standard-full-width"
@@ -63,12 +63,6 @@ export default class addTrack extends React.Component {
           <br />
           Genre
           <br />
-          <select name="Genre">
-            <option value="Rock">Rock</option>
-            <option value="Country">Country</option>
-            <option value="Classical">Classical</option>
-            <option value="Jazz">Jazz</option>
-          </select>
           <GenreList />
           <br />
           <a size="2" href="/addGenre">

@@ -1,22 +1,25 @@
-import React from react ;
-import Axios from "axios";
+import React from "react";
+import axios from "axios";
 
 export default class GenreList extends React.Component {
-    state = {
-        genre: []
-    }
+  state = {
+    genres: []
+  };
 
-    componentDidMount() {
-        axios.get("http://localhost:8080/genre").then(res => {
-            console.log(res);
-            this.setState({ genre: res.data });
-        });
-    }
+  componentDidMount() {
+    axios.get("http://localhost:8080/genre").then(res => {
+      console.log(res);
+      this.setState({ genres: res.data });
+    });
+  }
 
-    render() {
-        return (
-            <ul>
-                {this.state.genre.map(genre => <li>{genre.name}</li>)}
-            </ul>
-        )
-    }
+  render() {
+    return (
+      <select>
+        {this.state.genres.map(genre => (
+          <option key={genre.id}>{genre.name}</option>
+        ))}
+      </select>
+    );
+  }
+}
