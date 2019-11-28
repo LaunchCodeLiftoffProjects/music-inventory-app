@@ -17,7 +17,7 @@ export default class GenreInput extends React.Component {
       name: this.state.name
     };
 
-    axios.post("http://localhost:8080/genre/new/", { genre }).then(res => {
+    axios.post("http://localhost:8080/genre/new/", genre).then(res => {
       console.log(res);
       console.log(res.data);
     });
@@ -25,7 +25,7 @@ export default class GenreInput extends React.Component {
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <label>
           Genre Name:
           <input type="text" name="name" onChange={this.handleChange} />
