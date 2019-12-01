@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-export default class GenreList extends React.Component {
+export default class ArtistList extends React.Component {
   state = {
     artists: []
   };

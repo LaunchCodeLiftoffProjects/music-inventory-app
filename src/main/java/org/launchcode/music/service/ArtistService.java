@@ -1,8 +1,8 @@
 package org.launchcode.music.service;
+
 import org.launchcode.music.model.Artist;
 import org.launchcode.music.repository.ArtistRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -20,26 +20,25 @@ public class ArtistService {
         return artistRepository.findAll();
     }
 
-    public Artist addArtist(Artist artist) {
-        return artistRepository.save(artist);
-    }
-
-    public void deleteArtist(Artist artist) {
-        artistRepository.delete(artist);
-    }
-
-
-
-    public Optional <Artist> get(Long id) {
+    public Optional<Artist> get(Long id) {
         return artistRepository.findById(id);
     }
 
-    public Optional <Artist> update (Artist artist) {
-        if (artistRepository.existsById(artist.getId())) {
+    public Artist addArtist(Artist artist){
+        return artistRepository.save(artist);
+    }
+    public Optional<Artist> update(Artist artist) {
+        if(artistRepository.existsById(artist.getId())){
             artistRepository.save(artist);
             return Optional.of(artist);
         }
         return Optional.empty();
     }
-
+    public boolean delete(Long id) {
+        if (artistRepository.existsById(id)) {
+            artistRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
 }

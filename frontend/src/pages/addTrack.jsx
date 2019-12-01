@@ -9,6 +9,7 @@ import Select from "@material-ui/core/Select";
 import { lightGreen } from "@material-ui/core/colors";
 
 import GenreList from "../Components/GenreList";
+import ArtistList from "../Components/ArtistList";
 
 const useStyles = makeStyles(theme => ({
   button: {
