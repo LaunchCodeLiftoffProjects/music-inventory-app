@@ -10,8 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "artist")
 @Entity
-public class Artist
-{
+public class Artist {
     @Id
     @GeneratedValue
     @Column(name = "id")

@@ -9,6 +9,7 @@ import Select from "@material-ui/core/Select";
 import { lightGreen } from "@material-ui/core/colors";
 
 import GenreList from "../Components/GenreList";
+import ArtistList from "../Components/ArtistList";
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -48,17 +49,13 @@ export default class addTrack extends React.Component {
           <br />
           <br />
           Artist
-          <TextField
-            id="standard-full-width"
-            style={{ margin: 8 }}
-            placeholder="Type artist here"
-            helperText="Example: Elvis"
-            fullWidth
-            margin="normal"
-            InputLabelProps={{
-              shrink: true
-            }}
-          />
+          <br />
+          <ArtistList />
+          <br />
+          <a size="2" href="/addArtist">
+            Click here to add a Artist
+          </a>
+          <br />
           <br />
           <br />
           Genre

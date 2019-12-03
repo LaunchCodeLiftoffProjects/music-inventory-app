@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-export default class GenreInput extends React.Component {
+export default class ArtistInput extends React.Component {
   state = {
     name: ""
   };
@@ -14,11 +14,11 @@ export default class GenreInput extends React.Component {
     event.preventDefault();
     window.location = "http://localhost:3000/addTrack";
 
-    const genre = {
+    const artist = {
       name: this.state.name
     };
 
-    axios.post("http://localhost:8080/genre/new/", genre).then(res => {
+    axios.post("http://localhost:8080/artist/new/", artist).then(res => {
       console.log(res);
       console.log(res.data);
     });
@@ -28,7 +28,7 @@ export default class GenreInput extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Genre Name:
+          Artist:
           <input type="text" name="name" onChange={this.handleChange} />
         </label>
         <button type="submit">Add</button>

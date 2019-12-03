@@ -1,4 +1,4 @@
-package org.launchcode.music.controllers;
+package org.launchcode.music.controller;
 
 import org.launchcode.music.Model.Favorites;
 import org.launchcode.music.Service.FavoritesService;
