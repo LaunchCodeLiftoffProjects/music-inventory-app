@@ -12,6 +12,7 @@ export default class ArtistInput extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    window.location = "http://localhost:3000/addTrack";
 
     const artist = {
       name: this.state.name

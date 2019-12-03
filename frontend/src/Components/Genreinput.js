@@ -12,6 +12,7 @@ export default class GenreInput extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    window.location = "http://localhost:3000/addTrack";
 
     const genre = {
       name: this.state.name
