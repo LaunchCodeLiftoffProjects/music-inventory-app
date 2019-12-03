@@ -28,6 +28,17 @@ public class MusicTrackService {
     }
 
     public void updateMusicTrack(MusicTrack musicTrack) {
-        musicTrackRepository.save(musicTrack);
+        Long id = musicTrack.getId().longValue();
+        List<MusicTrack> musicTracks = musicTrackRepository.findAll();
+        for (MusicTrack track : musicTracks) {
+            if (track.getId().longValue() == id) {
+                musicTrackRepository.save(musicTrack);
+            }
+        }
+    }
+
+    public MusicTrack findTrackById(Long id) {
+        MusicTrack track = musicTrackRepository.findById(id).orElse(null);
+        return track;
     }
 }
