@@ -1,6 +1,5 @@
 package org.launchcode.music.model;
 import lombok.*;
-
 import javax.persistence.*;
 
 @Data
@@ -17,6 +16,18 @@ public class MusicTrack {
 
     @Column(name = "title")
     private String title;
+
+    @Column(name = "type")
+    private String type;
+
+    @ManyToOne
+    private Genre genre;
+
+    @ManyToOne
+    private Artist artist;
+
+    @ManyToOne
+    private Favorites favorites;
 
     public Integer getId() {
         return id;
