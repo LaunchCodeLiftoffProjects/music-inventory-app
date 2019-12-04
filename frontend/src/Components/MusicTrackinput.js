@@ -5,11 +5,11 @@ import ArtistList from "../Components/ArtistList";
 
 export default class MusicTrackInput extends React.Component {
   state = {
-    name: ""
+    title: ""
   };
 
   handleChange = event => {
-    this.setState({ name: event.target.value });
+    this.setState({ title: event.target.value });
   };
 
   handleSubmit = event => {

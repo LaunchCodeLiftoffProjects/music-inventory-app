@@ -23,7 +23,7 @@ public class Artist {
     private String name;
 
     @OneToMany
-    @JoinColumn(name = "music_track_id")
+    @JoinColumn(name = "artist_id")
     private List<MusicTrack> musicTracks = new ArrayList<>();
 
     public Long getId() {
