@@ -25,8 +25,7 @@ public class Favorites {
     @Column(name = "favorites")
     boolean Favorites;
 
-    @OneToMany
-    @JoinColumn(name = "favorites_id")
+    @OneToMany(mappedBy = "favorites")
     private List<MusicTrack> musicTracks = new ArrayList<>();
 
     public Long getId() {

@@ -25,8 +25,7 @@ public class Genre {
     @Column(name = "name")
     private String name;
 
-    @OneToMany
-    @JoinColumn(name = "genre_id")
+    @OneToMany(mappedBy = "genre")
     private List<MusicTrack> musicTracks = new ArrayList<>();
 
     public Long getId() {

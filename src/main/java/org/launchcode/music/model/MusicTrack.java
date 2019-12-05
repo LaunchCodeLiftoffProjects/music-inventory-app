@@ -21,12 +21,15 @@ public class MusicTrack {
     private String type;
 
     @ManyToOne
+    @JoinColumn(name = "genre_id")
     private Genre genre;
 
     @ManyToOne
+    @JoinColumn(name = "artist_id")
     private Artist artist;
 
     @ManyToOne
+    @JoinColumn(name = "favorites_id")
     private Favorites favorites;
 
     public Integer getId() {
