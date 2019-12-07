@@ -3,11 +3,12 @@ import React from "react";
 
 export default class Track extends React.Component {
   render() {
+    const { Playlist_id, Title } = this.state
   return (
     <div>
     <h1 color="white"> Create Playlist </h1>
     
-      <form>
+    <form>
         <table>
           <tbody>
           <tr>
@@ -18,7 +19,10 @@ export default class Track extends React.Component {
           </tr>  
           </tbody>
         </table>
-        <table> Tracks:</table>
+        <table> 
+          Tracks:
+
+        </table>
         <input type= "submit"/>
       </form>
       </div>

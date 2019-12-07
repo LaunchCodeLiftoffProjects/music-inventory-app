@@ -3,7 +3,7 @@ import './App.css'
 import { Routes } from './Router'
 import PostForm from './components/PostForm'
 
-class App extends Component {
+export default class App extends React.Component {
     render() {
         return (
             <div className="App">
@@ -13,4 +13,4 @@ class App extends Component {
     }
 }
 
-export default App
+

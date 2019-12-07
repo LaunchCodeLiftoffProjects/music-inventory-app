@@ -2,28 +2,35 @@ import React, { component } from 'react';
 import axios from "axios";
 
 export default class PostForm extends React.Component {
-    state = { 
-        Title: ""
-    };
+    constructor(props) {
+        super(props) 
+
+        this.state = {
+            Playlist_id: '',
+            Title: ''
+        }
+    }
     
-    changeHandler = e => {
-        this.setState({ Title: e.target.value });
+    changeHandler = (e) => {
+        this.setState({ [e.target.name]: e.target.value })
     };
 
     submitHandler = e => {
         e.preventDefault()
+        console.log(this.state)
+        axios.post('http://localhost:8080/playlist/new/', this.state)
+        .then(response => {
+            console.log(response)
+        })
+        .catch(error => {
+            console.log(error)
+        })
 
-        const playist = {
-            Title: this.state.Title
-        };
-        
-        axios.post('http://localhost:8080/playlist/new/', playist).then(res => {
-            console.log(res);
-            console.log(res.data)
-        });
+
     };
 
     render() {
+        const { Playlist_id, Title } = this.state
         return (
             <div>
             <form onSubmit={this.submitHandler}>
@@ -33,6 +40,7 @@ export default class PostForm extends React.Component {
             <div>
             <input type="text" name="Title" value={Title} onChange={this.changeHandler} />
             </div>
+            <button type="submit">Submit</button>
             </form>
 
             </div>
