@@ -28,8 +28,13 @@ export default class MusicTrackInput extends React.Component {
     const musictrack = {
       title: this.state.title,
       type: this.state.type,
-      artist: this.state.artist
+      artist: { id: this.state.artist }
     };
+
+    axios.get("http://localhost:8080/artist").then(res => {
+      console.log(res);
+      this.setState({ artists: res.data });
+    });
 
     axios
       .post("http://localhost:8080/music-track/new/", musictrack)
@@ -51,6 +56,7 @@ export default class MusicTrackInput extends React.Component {
         File Type
         <br />
         <select name="type" type="option" onChange={this.handleChange2}>
+          <option value=" ">Pick One</option>
           <option value="Record">Record</option>
           <option value="Cassette">Cassette</option>
           <option value="CD">CD</option>
@@ -64,7 +70,13 @@ export default class MusicTrackInput extends React.Component {
         <br />
         Artist
         <br />
-        <ArtistList />
+        <select name="artist" type="option" onChange={this.handleChange3}>
+          {this.state.artists.map(artist => (
+            <option value={artist.id} key={artist.id}>
+              {artist.name}
+            </option>
+          ))}
+        </select>
         <br />
         <a size="2" href="/addArtist">
           Click here to add a Artist
