@@ -4,6 +4,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -11,6 +13,7 @@ import javax.persistence.*;
 @Table(name = "artist")
 @Entity
 public class Artist {
+
     @Id
     @GeneratedValue
     @Column(name = "id")
@@ -18,6 +21,9 @@ public class Artist {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "artist")
+    private List<MusicTrack> musicTracks = new ArrayList<>();
 
     public Long getId() {
         return id;

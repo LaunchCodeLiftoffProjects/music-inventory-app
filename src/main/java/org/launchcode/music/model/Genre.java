@@ -3,6 +3,11 @@ package org.launchcode.music.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import static javax.persistence.CascadeType.ALL;
 
 
 @Data
@@ -19,6 +24,9 @@ public class Genre {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "genre")
+    private List<MusicTrack> musicTracks = new ArrayList<>();
 
     public Long getId() {
         return id;
