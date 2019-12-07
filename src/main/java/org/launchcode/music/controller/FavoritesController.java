@@ -20,7 +20,7 @@ public class FavoritesController {
     @ResponseStatus(HttpStatus.OK)
     public List<Favorites> getAll() { return favoritesService.getAll();}
 
-    @PostMapping
+    @PostMapping("/new")
     @ResponseStatus(HttpStatus.OK)
     public Favorites addNew (@RequestBody Favorites favorites){return favoritesService.addFavorites(favorites);}
 

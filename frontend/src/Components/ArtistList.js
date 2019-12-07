@@ -17,7 +17,9 @@ export default class ArtistList extends React.Component {
     return (
       <select>
         {this.state.artists.map(artist => (
-          <option key={artist.id}>{artist.name}</option>
+          <option value={artist.id} key={artist.id}>
+            {artist.name}
+          </option>
         ))}
       </select>
     );

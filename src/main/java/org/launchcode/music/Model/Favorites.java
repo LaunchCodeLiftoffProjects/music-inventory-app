@@ -23,7 +23,7 @@ public class Favorites {
     private Long id;
 
     @Column(name = "favorites")
-    boolean Favorites;
+    private String Favorites;
 
     @OneToMany(mappedBy = "favorites")
     private List<MusicTrack> musicTracks = new ArrayList<>();
@@ -36,11 +36,11 @@ public class Favorites {
         this.id = id;
     }
 
-    public boolean isFavorites() {
+    public String isFavorites() {
         return Favorites;
     }
 
-    public void setFavorites(boolean favorites) {
+    public void setFavorites(String favorites) {
         Favorites = favorites;
     }
 
