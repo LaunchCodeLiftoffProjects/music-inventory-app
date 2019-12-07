@@ -21,6 +21,7 @@ public class GenreService {
     public Optional<Genre> get(Long id) {
         return genreRepository.findById(id);
     }
+
     public Genre addGenre(Genre genre){
         return genreRepository.save(genre);
     }
