@@ -20,9 +20,9 @@ public class FavoritesController {
     @ResponseStatus(HttpStatus.OK)
     public List<Favorites> getAll() { return favoritesService.getAll();}
 
-    @PostMapping
+    @PostMapping("/new")
     @ResponseStatus(HttpStatus.OK)
-    public Favorites addNew (@RequestBody Favorites favorites){return favoritesService.addFavorites(favorites);}
+    public Favorites addNew(@RequestBody Favorites favorites){return favoritesService.addFavorites(favorites);}
 
     @GetMapping("/{id}")
     ResponseEntity<Favorites>get(@PathVariable Long id) {
