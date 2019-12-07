@@ -7,7 +7,7 @@ export default class GenreList extends React.Component {
   };
 
   componentDidMount() {
-    axios.get("http://localhost:8080/genre").then(res => {
+    axios.get("http://localhost:8080/genree").then(res => {
       console.log(res);
       this.setState({ genres: res.data });
     });
