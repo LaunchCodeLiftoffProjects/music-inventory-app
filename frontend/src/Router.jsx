@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import AddTrack from "./pages/addTrack";
 import Playlist from "./pages/page1";
-import playlist from "./components/playlist";
+import playlist from "./Components/playlist";
 import Track from "./pages/page2";
 import Search from "./pages/page3";
 import Share from "./pages/page4";
