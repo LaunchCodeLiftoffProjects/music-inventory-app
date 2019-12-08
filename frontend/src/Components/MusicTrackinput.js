@@ -7,7 +7,6 @@ export default class MusicTrackInput extends React.Component {
   state = {
     title: "",
     type: "",
-    artist: "",
     artistId: 0
   };
 
@@ -67,7 +66,6 @@ export default class MusicTrackInput extends React.Component {
         <br />
         Artist
         <br />
-        <h2>{this.state.artists}</h2>
         <ArtistList state={this.state.artistId} onChange={this.handleChange3}/>
         <br />
         <a size="2" href="/addArtist">
