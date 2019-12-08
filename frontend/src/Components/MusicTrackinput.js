@@ -7,7 +7,8 @@ export default class MusicTrackInput extends React.Component {
   state = {
     title: "",
     type: "",
-    artist: ""
+    artistId: 0,
+    genreId: 0
   };
 
   handleChange = event => {
@@ -19,7 +20,11 @@ export default class MusicTrackInput extends React.Component {
   };
 
   handleChange3 = event => {
-    this.setState({ artist: event.target.value });
+    this.setState({ artistId: event.target.value });
+  };
+
+  handleChange4 = event => {
+    this.setState({ genreId: event.target.value });
   };
 
   handleSubmit = event => {
@@ -28,13 +33,9 @@ export default class MusicTrackInput extends React.Component {
     const musictrack = {
       title: this.state.title,
       type: this.state.type,
-      artist: { id: this.state.artist }
+      artist: { id: this.state.artistId },
+      genre: { id: this.state.genreId }
     };
-
-    axios.get("http://localhost:8080/artist").then(res => {
-      console.log(res);
-      this.setState({ artists: res.data });
-    });
 
     axios
       .post("http://localhost:8080/music-track/new/", musictrack)
@@ -70,13 +71,7 @@ export default class MusicTrackInput extends React.Component {
         <br />
         Artist
         <br />
-        <select name="artist" type="option" onChange={this.handleChange3}>
-          {this.state.artists.map(artist => (
-            <option value={artist.id} key={artist.id}>
-              {artist.name}
-            </option>
-          ))}
-        </select>
+        <ArtistList state={this.state.artistId} onChange={this.handleChange3} />
         <br />
         <a size="2" href="/addArtist">
           Click here to add a Artist
@@ -85,7 +80,7 @@ export default class MusicTrackInput extends React.Component {
         <br />
         Genre
         <br />
-        <GenreList />
+        <GenreList state={this.state.genreId} onChange={this.handleChange4} />
         <br />
         <a size="2" href="/addGenre">
           Click here to add a Genre

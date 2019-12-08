@@ -15,7 +15,7 @@ export default class GenreList extends React.Component {
 
   render() {
     return (
-      <select>
+      <select value={this.props.state.genreId} onChange={this.props.onChange}>
         {this.state.genres.map(genre => (
           <option key={genre.id}>{genre.name}</option>
         ))}
