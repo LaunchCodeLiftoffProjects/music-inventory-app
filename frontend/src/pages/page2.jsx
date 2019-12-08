@@ -6,6 +6,11 @@ export default class addArtist extends React.Component {
   //Write HTML inside render function
 
   render() {
-    return <h1>Tracks?</h1>;
+    return (
+      <h1>
+        Tracks
+        <MusicTrackList />
+      </h1>
+    );
   }
 }
