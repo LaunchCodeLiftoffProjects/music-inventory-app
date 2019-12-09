@@ -17,7 +17,11 @@ export default class MusicTrackList extends React.Component {
     return (
       <ul>
         {this.state.musictracks.map(musictrack => (
-          <li key={musictrack.id}>{musictrack.title}</li>
+          <li key={musictrack.id}>
+            <br /> Title: {musictrack.title} <br />
+            by:{musictrack.artist.name} <br />
+            available on:{musictrack.type}
+          </li>
         ))}
       </ul>
     );

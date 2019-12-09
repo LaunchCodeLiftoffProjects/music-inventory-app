@@ -1,14 +1,14 @@
 import React from "react";
 import axios from "axios";
-import ArtistList from "../Components/ArtistList";
-import GenreList from "../Components/GenreList";
+import ArtistList from "../components/ArtistList";
+import GenreList from "../components/GenreList";
 
 export default class MusicTrackInput extends React.Component {
   state = {
     title: "",
     type: "",
     artistId: 3,
-    genreId: 4,
+    genreId: 5,
     favoritesId: 1
   };
 
@@ -34,6 +34,7 @@ export default class MusicTrackInput extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    window.location = "http://localhost:3000/page2";
 
     const musictrack = {
       title: this.state.title,
@@ -86,15 +87,6 @@ export default class MusicTrackInput extends React.Component {
         <br />
         <a size="2" href="/addArtist">
           Click here to add a Artist
-        </a>
-        <br />
-        <br />
-        Genre
-        <br />
-        <GenreList state={this.state.genreId} onChange={this.handleChange4} />
-        <br />
-        <a size="2" href="/addGenre">
-          Click here to add a Genre
         </a>
         <br />
         <br />
