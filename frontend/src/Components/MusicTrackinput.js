@@ -7,8 +7,9 @@ export default class MusicTrackInput extends React.Component {
   state = {
     title: "",
     type: "",
-    artistId: 0,
-    genreId: 0
+    artistId: 3,
+    genreId: 4,
+    favoritesId: 1
   };
 
   handleChange = event => {
@@ -27,6 +28,10 @@ export default class MusicTrackInput extends React.Component {
     this.setState({ genreId: event.target.value });
   };
 
+  handleChange5 = event => {
+    this.setState({ favoritesId: event.target.value });
+  };
+
   handleSubmit = event => {
     event.preventDefault();
 
@@ -34,7 +39,8 @@ export default class MusicTrackInput extends React.Component {
       title: this.state.title,
       type: this.state.type,
       artist: { id: this.state.artistId },
-      genre: { id: this.state.genreId }
+      genre: { id: this.state.genreId },
+      favorites: { id: this.state.favoritesId }
     };
 
     axios
@@ -65,7 +71,12 @@ export default class MusicTrackInput extends React.Component {
         </select>
         <br />
         <br />
-        <input type="checkbox" name="favorite" value="favorites" />
+        <input
+          type="checkbox"
+          name="favorites"
+          value="2"
+          onChange={this.handleChange5}
+        />
         Check box if this song is a favorite.
         <br />
         <br />
@@ -87,7 +98,7 @@ export default class MusicTrackInput extends React.Component {
         </a>
         <br />
         <br />
-        <button type="submit">Add</button>
+        <input type="submit" value="Submit" />
       </form>
     );
   }
