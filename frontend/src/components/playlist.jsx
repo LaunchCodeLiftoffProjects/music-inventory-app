@@ -26,8 +26,15 @@ export default class playlist extends React.Component {
 addTracks(id){
     this.setState({errorMsg: 'Function under construction'})
 }
-
-
+    
+handleClick = e => {
+    e.preventDefault();
+    window.location = "http://localhost:3000/addtrackstoplaylist";
+    const playlist = {
+        id: null,
+        title: this.state.title
+        };
+    }
 
 
     render() {
@@ -43,7 +50,7 @@ addTracks(id){
                     posts.map(post => <div key={post.id}>
                         {post.title} {"                               "}{""}
 
-                        <Button variant="contained" size="small">Add</Button></div>):
+                        <Button variant="contained" size="small" onClick={this.handleClick}>Add Track</Button></div>):
                     null
                 }
                 { errorMsg ? <div>{errorMsg}</div> : null}
