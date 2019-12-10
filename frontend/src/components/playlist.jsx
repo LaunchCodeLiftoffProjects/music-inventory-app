@@ -27,14 +27,7 @@ addTracks(id){
     this.setState({errorMsg: 'Function under construction'})
 }
     
-handleClick = e => {
-    e.preventDefault();
-    window.location = "http://localhost:3000/addtrackstoplaylist";
-    const playlist = {
-        id: null,
-        title: this.state.title
-        };
-    }
+
 
 
     render() {
@@ -48,9 +41,15 @@ handleClick = e => {
                 {
                     posts.length ?
                     posts.map(post => <div key={post.id}>
-                        {post.title} {"                               "}{""}
+                        {post.title} 
 
-                        <Button variant="contained" size="small" onClick={this.handleClick}>Add Track</Button></div>):
+                        <a size="2" href={'/addtrackstoplaylist/' + post.id}>
+
+Click to add tracks to this playlist
+
+</a>
+                        
+                        </div>):
                     null
                 }
                 { errorMsg ? <div>{errorMsg}</div> : null}
