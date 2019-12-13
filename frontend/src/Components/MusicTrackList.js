@@ -13,17 +13,34 @@ export default class MusicTrackList extends React.Component {
     });
   }
 
+  renderTableData() {
+    return this.state.musictracks.map((musictrack, index) => {
+      const { id, title, artist, type, genre } = musictrack;
+      return (
+        <tr key={id}>
+          <td>{title}</td>
+          <td>{artist.name}</td>
+          <td>{type}</td>
+          <td>{genre.name}</td>
+        </tr>
+      );
+    });
+  }
+
   render() {
     return (
-      <ul>
-        {this.state.musictracks.map(musictrack => (
-          <li key={musictrack.id}>
-            <br /> Title: {musictrack.title} <br />
-            by:{musictrack.artist.name} <br />
-            available on:{musictrack.type}
-          </li>
-        ))}
-      </ul>
+      <div>
+        <h1 id="title">Tracks</h1>
+        <table id="musictrack">
+          <tr>
+            <th>----Title of Song----</th>
+            <th>----Artist----</th>
+            <th>----Availible On----</th>
+            <th>----Genre Name----</th>
+          </tr>
+          <tbody>{this.renderTableData()}</tbody>
+        </table>
+      </div>
     );
   }
 }

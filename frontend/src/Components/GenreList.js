@@ -15,11 +15,14 @@ export default class GenreList extends React.Component {
 
   render() {
     return (
-      <select value={this.props.state.genreId} onChange={this.props.onChange}>
+      <ul value={this.props.state.genreId} onChange={this.props.onChange}>
         {this.state.genres.map(genre => (
-          <option key={genre.id}>{genre.name}</option>
+          <li key={genre.id}>
+            <input type="radio" name="genre" value={genre.id} /> {genre.name}
+            <br />
+          </li>
         ))}
-      </select>
+      </ul>
     );
   }
 }
