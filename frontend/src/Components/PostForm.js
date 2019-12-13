@@ -59,7 +59,7 @@ export default class PostForm extends React.Component {
 
            
                 <label>
-                    Playlist Toitle :                    
+                    Playlist Title :                    
 
                       
 
