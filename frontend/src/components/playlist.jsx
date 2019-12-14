@@ -27,35 +27,42 @@ addTracks(id){
     this.setState({errorMsg: 'Function under construction'})
 }
     
+ 
+renderTableData() {
+    return this.state.posts.map((post, index) => {
+      const { id, title } = post;
+      return (
+        <tr key={id}>
+          <td>{title}</td>
+        <td><a size="2" href={'/viewtracksinaplaylist/' + post.id}>View Tracks</a></td>
+        <td><a size="2" href={'/addtrackstoplaylist/' + post.id}>Add Tracks</a></td>
+        </tr>
+      );
+    });
+  }
 
 
+  render() {
+    const { posts, errorMsg } = this.state
+    return (
+        
+        <div>
+        <h1 id="title">Playlists</h1>
+        
+        <table border = "1" id="musictrack">
+          <tr>
+            <th>Playlist Title</th>
+            <th>View Tracks</th>
+            <th>Add Tracks</th>
+           </tr>
+          <tbody>{this.renderTableData()}</tbody>
+        </table>
+      </div>
 
-    render() {
-        const { posts, errorMsg } = this.state
-        return (
-            <div>
-                
-              <h1>  Playlist </h1>
-                         
-                              
-                {
-                    posts.length ?
-                    posts.map(post => <div key={post.id}>
-                        {post.title} 
+    )
+}
 
-                        <a size="2" href={'/addtrackstoplaylist/' + post.id}>
 
-Click to add tracks to this playlist
+ 
 
-</a>
-                        
-                        </div>):
-                    null
-                }
-                { errorMsg ? <div>{errorMsg}</div> : null}
-            
-            </div>
-
-        )
-    }
 }

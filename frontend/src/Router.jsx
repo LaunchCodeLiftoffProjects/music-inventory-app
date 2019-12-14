@@ -11,6 +11,7 @@ import AddGenre from "./pages/addGenre";
 import AddArtist from "./pages/addArtist";
 import addplaylist from "./pages/addplaylist";
 import AddTrackPlaylist from "./pages/addtrackstoplaylist";
+import ViewTracksInAPlaylist from "./pages/viewtracksinaplaylist";
 
 import Layout from "./Layout";
 
@@ -25,9 +26,10 @@ export const Routes = () => {
           <Route path="/page3" exact component={Search} />
           <Route path="/page4" exact component={Share} />
           <Route path="/addGenre" exact component={AddGenre} />
-          <Route path="/addArtist" extact component={AddArtist} />
+          <Route path="/addArtist" exact component={AddArtist} />
           <Route path="/addplaylist" extact component={addplaylist}/>
-          <Route path="/addtrackstoplaylist/:id" extact component={AddTrackPlaylist}/>
+          <Route path="/addtrackstoplaylist/:id" exact component={AddTrackPlaylist}/>
+          <Route path="/viewtracksinaplaylist/:id" exact component={ViewTracksInAPlaylist}/>
         </div>
       </Layout>
     </Router>
