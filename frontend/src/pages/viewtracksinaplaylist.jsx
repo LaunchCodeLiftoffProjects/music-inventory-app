@@ -41,9 +41,12 @@ export default class ViewTracksInAPlaylist extends React.Component {
        })
       .catch(error =>{
           console.log(error)
+    
           
       })
+    window.location.reload();
     };
+
   
  
   renderTableData() {
