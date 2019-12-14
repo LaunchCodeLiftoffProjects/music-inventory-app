@@ -25,7 +25,7 @@ public class Genre {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "genre")
+    @OneToMany
     private List<MusicTrack> musicTracks = new ArrayList<>();
 
     public Long getId() {

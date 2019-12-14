@@ -25,7 +25,7 @@ public class Favorites {
     @Column(name = "favorites")
     private String Favorites;
 
-    @OneToMany(mappedBy = "favorites")
+    @OneToMany
     private List<MusicTrack> musicTracks = new ArrayList<>();
 
     public Long getId() {

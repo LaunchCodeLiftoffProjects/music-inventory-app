@@ -1,8 +1,16 @@
 import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import MusicTrackList from "../Components/MusicTrackList";
 
-export default class Track extends React.Component {
+export default class addArtist extends React.Component {
   //Write HTML inside render function
+
   render() {
-    return <div>Track</div>;
+    return (
+      <h1>
+        Tracks
+        <MusicTrackList />
+      </h1>
+    );
   }
 }

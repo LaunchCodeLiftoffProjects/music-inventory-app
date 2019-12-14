@@ -22,7 +22,7 @@ public class Artist {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "artist")
+    @OneToMany
     private List<MusicTrack> musicTracks = new ArrayList<>();
 
     public Long getId() {
