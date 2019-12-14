@@ -1,4 +1,54 @@
 import React from "react";
+<<<<<<< HEAD
+
+import axios from "axios";
+
+
+
+export default class MusicTrackList extends React.Component {
+
+  state = {
+
+    musictracks: []
+
+  };
+
+
+
+  componentDidMount() {
+
+    axios.get("http://localhost:8080/music-track").then(res => {
+
+      console.log(res);
+
+      this.setState({ musictracks: res.data });
+
+    });
+
+  }
+
+
+
+  render() {
+
+    return (
+
+      <ul>
+
+        {this.state.musictracks.map(musictrack => (
+
+          <li key={musictrack.id}>{musictrack.title}</li>
+
+        ))}
+
+      </ul>
+
+    );
+
+  }
+
+}
+=======
 import axios from "axios";
 
 export default class MusicTrackList extends React.Component {
@@ -44,3 +94,4 @@ export default class MusicTrackList extends React.Component {
     );
   }
 }
+>>>>>>> 97948fa9afbbdfeae7bc619ffeed0d555c934a47

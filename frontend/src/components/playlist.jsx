@@ -19,14 +19,22 @@ export default class playlist extends React.Component {
             })
             .catch(error =>{
                 console.log(error)
+<<<<<<< HEAD
+                this.setState({errorMsg: 'Error retreiving data'})
+=======
                 this.setState({errorMsg: 'Error retreiving dara'})
+>>>>>>> 97948fa9afbbdfeae7bc619ffeed0d555c934a47
             })
     }
 
 addTracks(id){
     this.setState({errorMsg: 'Function under construction'})
 }
+<<<<<<< HEAD
+    
+=======
 
+>>>>>>> 97948fa9afbbdfeae7bc619ffeed0d555c934a47
 
 
 
@@ -41,9 +49,21 @@ addTracks(id){
                 {
                     posts.length ?
                     posts.map(post => <div key={post.id}>
+<<<<<<< HEAD
+                        {post.title} 
+
+                        <a size="2" href={'/addtrackstoplaylist/' + post.id}>
+
+Click to add tracks to this playlist
+
+</a>
+                        
+                        </div>):
+=======
                         {post.title} {"                               "}{""}
 
                         <Button variant="contained" size="small">Add</Button></div>):
+>>>>>>> 97948fa9afbbdfeae7bc619ffeed0d555c934a47
                     null
                 }
                 { errorMsg ? <div>{errorMsg}</div> : null}
