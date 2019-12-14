@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-import ArtistList from "../Components/ArtistList";
-import GenreList from "../Components/GenreList";
+import ArtistList from "../components/ArtistList";
+import GenreList from "../components/GenreList";
 
 export default class MusicTrackInput extends React.Component {
   state = {
