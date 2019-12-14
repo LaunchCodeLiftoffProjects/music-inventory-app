@@ -23,7 +23,7 @@ public class Playlistcontroller
     }
 
 
-    @GetMapping
+    @GetMapping("/viewplaylist")
 
     @ResponseStatus(HttpStatus.OK)
 
