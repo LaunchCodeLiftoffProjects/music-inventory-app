@@ -90,6 +90,13 @@ export default class MusicTrackInput extends React.Component {
         </a>
         <br />
         <br />
+        Genre
+        <GenreList state={this.state.genreId} onChange={this.handleChange4} />
+        <a size="2" href="/addGenre">
+          Click here to add a Genre
+        </a>
+        <br />
+        <br />
         <input type="submit" value="Submit" />
       </form>
     );

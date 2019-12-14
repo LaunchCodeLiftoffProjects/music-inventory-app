@@ -9,6 +9,8 @@ import Search from "./pages/page3";
 import Share from "./pages/page4";
 import AddGenre from "./pages/addGenre";
 import AddArtist from "./pages/addArtist";
+import addplaylist from "./pages/addplaylist";
+import AddTrackPlaylist from "./pages/addtrackstoplaylist";
 
 import Layout from "./Layout";
 
@@ -24,6 +26,8 @@ export const Routes = () => {
           <Route path="/page4" exact component={Share} />
           <Route path="/addGenre" exact component={AddGenre} />
           <Route path="/addArtist" extact component={AddArtist} />
+          <Route path="/addplaylist" extact component={addplaylist}/>
+          <Route path="/addtrackstoplaylist/:id" extact component={AddTrackPlaylist}/>
         </div>
       </Layout>
     </Router>

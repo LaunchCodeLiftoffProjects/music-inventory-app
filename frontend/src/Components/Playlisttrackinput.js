@@ -112,13 +112,7 @@ export default class Playlisttrackinput extends React.Component {
 
         <label>
 
-         Edit Playlist Tracks  
-         
-</label>
-<br />
-
-<br />
-<label>
+         Edit Playlist Tracks
          PlayList Title: Sample-Title
           
 

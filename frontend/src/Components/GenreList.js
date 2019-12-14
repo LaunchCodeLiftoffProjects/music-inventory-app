@@ -7,7 +7,7 @@ export default class GenreList extends React.Component {
   };
 
   componentDidMount() {
-    axios.get("http://localhost:8080/genree").then(res => {
+    axios.get("http://localhost:8080/genre").then(res => {
       console.log(res);
       this.setState({ genres: res.data });
     });
@@ -15,11 +15,14 @@ export default class GenreList extends React.Component {
 
   render() {
     return (
-      <select value={this.props.state.genreId} onChange={this.props.onChange}>
+      <ul value={this.props.state.genreId} onChange={this.props.onChange}>
         {this.state.genres.map(genre => (
-          <option key={genre.id}>{genre.name}</option>
+          <li key={genre.id}>
+            <input type="radio" name="genre" value={genre.id} /> {genre.name}
+            <br />
+          </li>
         ))}
-      </select>
+      </ul>
     );
   }
 }
