@@ -1,6 +1,6 @@
-package org.launchcode.music.Service;
-import org.launchcode.music.Model.Favorites;
-import org.launchcode.music.Repository.FavoritesRepository;
+package org.launchcode.music.service;
+import org.launchcode.music.model.Favorites;
+import org.launchcode.music.repository.FavoritesRepository;
 
 import org.springframework.stereotype.Service;
 
