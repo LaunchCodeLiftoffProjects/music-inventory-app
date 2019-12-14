@@ -1,7 +1,7 @@
 package org.launchcode.music.controller;
 
-import org.launchcode.music.Model.Favorites;
-import org.launchcode.music.Service.FavoritesService;
+import org.launchcode.music.model.Favorites;
+import org.launchcode.music.service.FavoritesService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ public class FavoritesController {
     @ResponseStatus(HttpStatus.OK)
     public List<Favorites> getAll() { return favoritesService.getAll();}
 
-    @PostMapping
+    @PostMapping("/new")
     @ResponseStatus(HttpStatus.OK)
     public Favorites addNew (@RequestBody Favorites favorites){return favoritesService.addFavorites(favorites);}
 

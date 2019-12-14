@@ -1,6 +1,6 @@
-package org.launchcode.music.Repository;
+package org.launchcode.music.repository;
 
-import org.launchcode.music.Model.Favorites;
+import org.launchcode.music.model.Favorites;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
