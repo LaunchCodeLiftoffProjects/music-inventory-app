@@ -27,7 +27,7 @@ export const Routes = () => {
           <Route path="/addGenre" exact component={AddGenre} />
           <Route path="/addArtist" extact component={AddArtist} />
           <Route path="/addplaylist" extact component={addplaylist}/>
-          <Route path="/addtrackstoplaylist" extact component={AddTrackPlaylist}/>
+          <Route path="/addtrackstoplaylist/:id" extact component={AddTrackPlaylist}/>
         </div>
       </Layout>
     </Router>

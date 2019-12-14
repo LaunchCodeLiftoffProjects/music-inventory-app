@@ -19,9 +19,9 @@ export default class MusicTrackList extends React.Component {
       return (
         <tr key={id}>
           <td>{title}</td>
-          <td>{artist.name}</td>
+          {<td>{artist.name}</td> }
           <td>{type}</td>
-          <td>{genre.name}</td>
+          { <td>{genre.name}</td> }
         </tr>
       );
     });
