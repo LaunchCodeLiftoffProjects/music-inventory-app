@@ -19,14 +19,14 @@ export default class playlist extends React.Component {
             })
             .catch(error =>{
                 console.log(error)
-                this.setState({errorMsg: 'Error retreiving dara'})
+                this.setState({errorMsg: 'Error retreiving data'})
             })
     }
 
 addTracks(id){
     this.setState({errorMsg: 'Function under construction'})
 }
-
+    
 
 
 
@@ -41,14 +41,22 @@ addTracks(id){
                 {
                     posts.length ?
                     posts.map(post => <div key={post.id}>
-                        {post.title} {"                               "}{""}
+                        {post.title} 
 
-                        <Button variant="contained" size="small">Add</Button></div>):
+                        <a size="2" href={'/addtrackstoplaylist/' + post.id}>
+
+Click to add tracks to this playlist
+
+</a>
+                        
+                        </div>):
                     null
                 }
                 { errorMsg ? <div>{errorMsg}</div> : null}
             
             </div>
+
+            
 
         )
     }

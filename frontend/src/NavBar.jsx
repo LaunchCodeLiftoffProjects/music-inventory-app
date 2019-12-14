@@ -26,6 +26,9 @@ export const NavBar = ({ color }) => (
       <Link to="/page4">
         <Button>Share</Button>
       </Link>
+      <Link to="/addplaylist">
+        <Button>Add Playlist</Button>
+      </Link>
     </Toolbar>
   </AppBar>
 );
