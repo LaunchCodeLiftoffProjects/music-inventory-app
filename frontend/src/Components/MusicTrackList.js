@@ -33,10 +33,10 @@ export default class MusicTrackList extends React.Component {
         <h1 id="title">Tracks</h1>
         <table id="musictrack">
           <tr>
-            <th>----Title of Song----</th>
-            <th>----Artist----</th>
-            <th>----Availible On----</th>
-            <th>----Genre Name----</th>
+            <th>Title of Song</th>
+            <th>Artist</th>
+            <th>Available On</th>
+            <th>Genre Name</th>
           </tr>
           <tbody>{this.renderTableData()}</tbody>
         </table>

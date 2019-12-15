@@ -11,7 +11,10 @@ export const NavBar = ({ color }) => (
       <img src={logo} alt="logo" width="42" height="42"></img>
 
       <Link to="/page1">
-        <Button>Playlist</Button>
+        <Button>Playlists</Button>
+      </Link>
+      <Link to="/addplaylist">
+        <Button>Add Playlist</Button>
       </Link>
       <Link to="/page2">
         <Button>Track</Button>
@@ -26,9 +29,7 @@ export const NavBar = ({ color }) => (
       <Link to="/page4">
         <Button>Share</Button>
       </Link>
-      <Link to="/addplaylist">
-        <Button>Add Playlist</Button>
-      </Link>
+     
     </Toolbar>
   </AppBar>
 );
